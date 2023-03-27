@@ -1,0 +1,16 @@
+POST http://localhost:3030/api/users
+Content-Type: application/json 
+
+{
+    "username": "Nico",
+    "password": "lamidupassword"
+}
+
+###
+POST http://localhost:3030/api/register
+Content-Type: application/json
+
+{
+    "username": "Nico",
+    "password": "lamidupassword"
+}

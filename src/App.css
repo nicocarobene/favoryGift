@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+#root{
+    text-align: center;
+    background-color: var(--theme-body-bg);
+}
+
+:root{
+    --theme-header: #292929;
+    --theme-body-bg: #70160e;
+    --theme-letter-bk: #161917;
+    --theme-letter-wh: #e1e3db;
+    --brand-color_1: #00ff99;
+    --brand-color_2: #00ccff;
+    --brand-color_3: #9933ff;
+    --brand-color_4: tomato;
+    --brand-color_5: #fff35c;
+    --brand-color_6: #8429de;
+  }
+.title{
+    text-align: center;
+    color: var(--theme-letter);
+    margin: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.App{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+.container__gifs{
+    width: 70vw;
+}
+.Tranding{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+}
+

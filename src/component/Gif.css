@@ -1,0 +1,20 @@
+.Gif-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    margin-top: 10px;
+}
+.Gif{
+    border: 1px solid #eee;
+    border-radius: 6px;
+    display: flex;
+    margin-bottom: 4px;
+    flex-direction: column;
+    align-items: center;
+}
+.Gif img{
+    width: 15rem;
+    margin: 5px;
+}

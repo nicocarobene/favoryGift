@@ -1,0 +1,14 @@
+.gf-header{
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--theme-header);
+}
+.gf-header a{
+    color: var(--theme-letter-wh);
+    font-size: 16px;
+    margin: 10px;
+}
+
+.gf-header a:hover{
+    text-decoration: underline;
+}
