@@ -35,7 +35,7 @@ export default function App () {
             </Switch>
           </div>
           <div className='Tranding'>
-            <h3>Memes Trending</h3>
+            <h3 className='Tranding__title'>Memes Trending</h3>
             <TrendingSearches />
           </div>
         </div>

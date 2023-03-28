@@ -8,7 +8,7 @@ function Gif ({ id, title, url }) {
     <div className='Gif-container'>
       <Link to={`/gif/${id}`}>
         <div id={id} className='Gif'>
-          <h4>{title}</h4>
+          <h4 className='Gif__title'>{title}</h4>
           <img src={url} alt={title} />
         </div>
       </Link>

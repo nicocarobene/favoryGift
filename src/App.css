@@ -35,8 +35,11 @@ a{
 }
 
 .App{
+    margin-top: 20px;
     display: flex;
-    align-items: flex-start;
+    width: 100%;
+}
+.Meme__container{
     width: 100%;
 }
 .container__gifs{
@@ -46,5 +49,10 @@ a{
     display: flex;
     flex-direction: column;
     width: 30vw;
+}
+.Tranding__title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
