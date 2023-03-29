@@ -14,7 +14,7 @@ export default function TrendingSearches () {
   }, [])
 
   return (
-    <div>
+    <>
       <CategoryList>
         {trends.map((singleTrend, index) =>
           <CategoryListItem
@@ -26,6 +26,6 @@ export default function TrendingSearches () {
             </CategoryLink>
           </CategoryListItem>)}
       </CategoryList>
-    </div>
+    </>
   )
 }

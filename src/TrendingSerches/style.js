@@ -4,6 +4,7 @@ import { Link } from 'wouter'
 export const CategoryList = styled.ul`
 list-style-position: inside;
 display: flex;
+justify-content: center;
 flex-wrap: wrap;
 padding: 0;
 margin: 0;

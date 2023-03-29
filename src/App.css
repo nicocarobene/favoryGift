@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap');
 
 *{
     font-family: 'Roboto', sans-serif;
@@ -6,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 a{
     text-decoration: none;
 }
@@ -17,7 +19,8 @@ a{
 :root{
     --theme-header: #292929;
     --theme-body-bg: #70160e;
-    --theme-letter-bk: #161917;
+    --theme-title-head: #fbff00;
+    --theme-letter-bk: #000000;
     --theme-letter-wh: #e1e3db;
     --brand-color_1: #00ff99;
     --brand-color_2: #00ccff;
@@ -27,8 +30,10 @@ a{
     --brand-color_6: #8429de;
   }
 .title{
+    font-family: 'Cabin', sans-serif;
+    font-size: 3rem;
     text-align: center;
-    color: var(--theme-letter);
+    color: var(--theme-title-head);
     margin: 1rem;
     font-weight: bold;
     cursor: pointer;
@@ -39,11 +44,9 @@ a{
     display: flex;
     width: 100%;
 }
-.Meme__container{
-    width: 100%;
-}
 .container__gifs{
-    width: 70vw;
+    padding-left: 5px;
+    width: 100%;
 }
 .Tranding{
     display: flex;
@@ -55,4 +58,20 @@ a{
     font-weight: bold;
     margin-bottom: 10px;
 }
-
+.categoriList__container{
+    display: flex;
+    justify-content: center;
+  }   
+  
+@media only screen and (max-width: 600px) {
+    .App {
+        flex-direction: column;
+    }
+    .Tranding{
+        width: 100%;
+    }
+    .categoriList__container{
+        max-width: 100%;
+    }
+    
+}

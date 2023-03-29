@@ -1,9 +1,8 @@
 .Gif-container{
     position: relative;
-    margin-top: 2rem;
 }
 .Gif{
-    display: contents;
+    display: inline-block;
     position: relative;
     text-align: center;
 }
@@ -18,6 +17,8 @@
 }
 .Gif img{
     height: 10rem;
+    width: 10rem;
+    object-fit: cover;
 }
 .btn{
     position: absolute;
