@@ -4,8 +4,8 @@ import { Helmet } from 'react-helmet'
 import ListOfGifs from '../../component/ListOfGifs'
 import UseGifs from '../../Hook/UseGifs'
 import useNearScreen from '../../Hook/useNearScreen'
+import './style.css'
 // import SearchForm from '../../component/searchForm'
-
 export default function SearchResult ({ params }) {
   const { meme, rating = 'g' } = params
   const { loading, gifs, setPage } = UseGifs({ meme, rating })
@@ -30,7 +30,7 @@ export default function SearchResult ({ params }) {
 
   return (
     <>
-      <div>
+      <div className='searching__Container'>
         {loading
           ? (
               'Cargando Memes'

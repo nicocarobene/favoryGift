@@ -6,6 +6,7 @@
     position: relative;
     text-align: center;
 }
+
 .Gif__title{
     font-size: .7rem;
     color: var(--theme-letter-wh);
@@ -24,4 +25,11 @@
     position: absolute;
     top: 0;
     right: 5px;
+}
+.Detail img {
+    height: 25rem;
+    width: 25rem; 
+}
+.Detail .Gif__title{
+    font-size: 1.5rem;
 }
