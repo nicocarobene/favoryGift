@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'wouter'
+import { Link, useLocation } from 'wouter'
 import useUser from '../../Hook/useUser'
 import './Login.css'
 
@@ -29,31 +29,38 @@ export default function Login ({ onLogin }) {
     <>
       {isLoginLoading && <strong>Checking credentials...</strong>}
       {!isLoginLoading &&
-        <form className='form' onSubmit={handleSubmit}>
-          <label>
-            Username
-            <input
-              type='text'
-              placeholder='Username'
-              value={username}
-              onChange={(e) => {
-                setUsername(e.target.value)
-              }}
-            />
-          </label>
-          <label>
-            Password
-            <input
-              type='password'
-              placeholder='password'
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value)
-              }}
-            />
-          </label>
-          <button className='btnLog'>Login</button>
-        </form>}
+        <div className='login-form-container'>
+          <h2 className='login__log'>Log In</h2>
+          <form className='login__form' onSubmit={handleSubmit}>
+            <label>
+              Username
+              <input
+                type='text'
+                placeholder='Username'
+                value={username}
+                onChange={(e) => {
+                  setUsername(e.target.value)
+                }}
+              />
+              <i class='fa-solid fa-user' />
+            </label>
+            <label>
+              Password
+              <input
+                type='password'
+                placeholder='password'
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value)
+                }}
+              />
+              <i class='fa-solid fa-lock' />
+            </label>
+            <button className='login__btnLog'>Login</button>
+          </form>
+          <p>You don't have an account?</p>
+          <Link to='/register'>Register</Link>
+        </div>}
       {hasLoginError && <strong>Credentials are invalid</strong>}
     </>
   )

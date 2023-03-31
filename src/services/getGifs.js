@@ -1,7 +1,7 @@
 import { API_KEY, API_URL } from './setting'
 
 export default function getGifs ({ meme, rating, page = 0 }) {
-  const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}q&q=${meme}&limit=10&offset=${page * 10}&rating=${rating}&lang=en`
+  const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}q&q=${meme}&limit=24&offset=${page * 10}&rating=${rating}&lang=en`
 
   return fetch(apiURL)
     .then(res => res.json())

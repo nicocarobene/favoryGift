@@ -13,7 +13,7 @@ export default function Header () {
   }
 
   const content = match
-    ? null
+    ? <Link to='/register'>Register</Link>
     : isLogged
       ? <Link to='' onClick={handleClick}>Logout</Link>
       : (

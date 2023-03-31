@@ -4,9 +4,21 @@
 }
 .searchGifs input, select, button{ 
     padding: 5px;
+    border-radius: 3px;
+    margin: 2px;
+    height: 2.5rem;
+    border: none;
+}
+.searchGifs input{
+    width: 18rem;
 }
 .searchGifs button{
     outline: none;
-    background-color: aqua;
+    background-color: #00ffff;
     border: none;
+    padding: 5px 20px;
+}
+
+.searchGifs button:hover{
+    cursor: pointer;
 }

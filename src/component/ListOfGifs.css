@@ -8,7 +8,7 @@ h1{
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     place-items: center;
     align-items: start;
-    gap: 0 10px;
+    gap: 5px 10px;
     min-height: 100vh;
 }
 .Meme__container{

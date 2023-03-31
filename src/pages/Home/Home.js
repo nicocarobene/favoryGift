@@ -11,7 +11,7 @@ export default function Home () {
   return (
     <>
       <Helmet>
-        <title>Home | Giffy</title>
+        <title>Home | FavorityGify</title>
       </Helmet>
       <div className='container__gifs'>
         <h4 className='Last__search'>Your last seach meme</h4>

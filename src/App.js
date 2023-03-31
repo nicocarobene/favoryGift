@@ -19,7 +19,7 @@ export default function App () {
       <GifsContextProvider>
         <Header />
         <Link to='/'>
-          <h1 className='title'>MemeTranding</h1>
+          <h1 className='title'>FavorityGify</h1>
         </Link>
         <SearchForm />
         <div className='App'>
@@ -35,7 +35,7 @@ export default function App () {
             </Switch>
           </div>
           <div className='Tranding'>
-            <h3 className='Tranding__title'>Memes Trending</h3>
+            <h3 className='Tranding__title'>Memes Trending:</h3>
             <TrendingSearches />
           </div>
         </div>

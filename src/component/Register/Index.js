@@ -42,16 +42,18 @@ export default function Formulario () {
         {
             ({ errors, isSubmitting }) => (
               <Form className='formik'>
+                <i class='fa-solid fa-user' />
+                <ErrorMessage name='username' component='h4' />
                 <Field
                   className={errors.username ? 'error' : ''}
                   name='username' placeholder='Put here the username'
                 />
-                <ErrorMessage name='username' component='h4' />
+                <i class='fa-solid fa-lock' />
+                <ErrorMessage name='password' component='h4' />
                 <Field
                   className={errors.password ? 'error' : ''}
                   name='password' placeholder='Put here the password'
                 />
-                <ErrorMessage name='password' component='h4' />
                 <button disabled={isSubmitting}>Register</button>
                 {console.log(errors)}
               </Form>

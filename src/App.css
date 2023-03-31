@@ -17,9 +17,9 @@ a{
 }
 
 :root{
-    --theme-header: #292929;
-    --theme-body-bg: #70160e;
-    --theme-title-head: #fbff00;
+    --theme-header: #1f2029;
+    --theme-body-bg: #2a2b38;
+    --theme-title-head: #ffeba7;
     --theme-letter-bk: #000000;
     --theme-letter-wh: #e1e3db;
     --brand-color_1: #00ff99;
@@ -40,6 +40,7 @@ a{
 }
 
 .App{
+    padding: 0 10px;
     margin-top: 20px;
     display: flex;
     width: 100%;
@@ -50,16 +51,18 @@ a{
 }
 .Tranding{
     display: flex;
+    align-items: center;
     flex-direction: column;
-    width: 30vw;
+    width: 20vw;
 }
 .Tranding__title{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 .categoriList__container{
     display: flex;
+    width: 70%;
     justify-content: center;
   }   
   
@@ -71,7 +74,7 @@ a{
         width: 100%;
     }
     .categoriList__container{
-        max-width: 100%;
+        width: 100%;
     }
     
 }

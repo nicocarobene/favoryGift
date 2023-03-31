@@ -38,11 +38,11 @@ export default function SearchResult ({ params }) {
           : (
             <>
               <Helmet>
-                <title>{decodeURI(meme)}</title>
+                <title>{decodeURI(meme)} | FavorityGify</title>
                 <meta name='description' content={`Result of: ${decodeURI(meme)}`} />
               </Helmet>
               {/* <SearchForm initialKeyword={decodeURI(meme)} initialRating={rating} /> */}
-              <h3>List of Meme of: {decodeURI(meme).toUpperCase()}</h3>
+              <h3>List of Meme of: <span>" {decodeURI(meme).toUpperCase()} "</span></h3>
               <ListOfGifs gifs={gifs} />
               <div id='visor' ref={externalRef} />
             </>

@@ -1,10 +1,13 @@
 import React from 'react'
 import Login from '../../component/Login/Index'
+import { Helmet } from 'react-helmet'
 
 export default function LoginPage () {
   return (
     <>
-      <h2>Login</h2>
+      <Helmet>
+        <title>Login | FavityGify</title>
+      </Helmet>
       <Login />
     </>
   )

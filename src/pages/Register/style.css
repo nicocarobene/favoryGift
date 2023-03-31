@@ -1,3 +1,6 @@
 .container__formik{
     width: 70%;
 }
+.container__formik h2{
+    margin-bottom: 1rem;
+}

@@ -19,7 +19,7 @@ export default function Error404 () {
   return (
     <>
       <Helmet>
-        <title>Error 404 | Giffy </title>
+        <title>Error 404 | FavorityGify </title>
       </Helmet>
       <br />
       <h1>Error404</h1>

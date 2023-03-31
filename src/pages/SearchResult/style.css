@@ -1,3 +1,15 @@
 .searching__Container{
     width: 100%;
 }
+
+.searching__Container h3{
+    color: var(--theme-letter-wh);
+    font-size: 1.2rem;
+    text-align: start;
+}
+
+.searching__Container span{
+    margin-left: 1.3rem;
+    font-size: 1.3rem;
+    color: var(--theme-letter-bk)
+}

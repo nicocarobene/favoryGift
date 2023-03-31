@@ -33,7 +33,7 @@ export default function Detail ({ params }) {
   return (
     <>
       <Helmet>
-        <title>{gif.title} | Giffy</title>
+        <title>{gif.title} | FavorityGify</title>
       </Helmet>
       <Gif gifD={gifD} title={gif.title} url={gif.url} id={id} />
     </>

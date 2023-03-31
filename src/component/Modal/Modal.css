@@ -6,24 +6,36 @@
     top: 0;
     left: 0;
     right: 0;
-    transition: all .3s ease;
     z-index: 1;
 }
 
 .modal-content{
-    background-color: #111;
-    width: 300px;
+    border-radius: 6px;
+    display: table;
+    background-color: var(--theme-header);
     padding: 10px 20px;
-    height: 80vh;
-    max-height: 500px;
     margin-top: 10vh ;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 3rem;
     position: relative;
-    transition: all .3s ease;
+
 }
 
-.modal-content button{
-    display: block;
-    margin-bottom: 32px;
+.modal__btn{
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #d70000;
+    background-color: var(--theme-body-bg);
+    outline: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+.modal__btn:hover{
+    background: #191920 ;
+    color: #d700009a ;
 }
