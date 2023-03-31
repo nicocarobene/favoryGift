@@ -18,7 +18,7 @@ test('render without crashing', async () => {
   fireEvent.click(button)
 
   screen.debug()
-  const title = await screen.findByText('List of Meme of: MATRIX')
+  const title = await screen.findByText('" MATRIX "')
 
   expect(title).toBeVisible()
 })

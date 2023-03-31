@@ -6,7 +6,7 @@ export default function RegisterPage () {
   return (
     <>
       <Helmet>
-        <title>Register | FavityGify </title>
+        <title>Register | FavityGify</title>
       </Helmet>
       <div className='container__formik'>
         <h2>Register</h2>
