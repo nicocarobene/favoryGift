@@ -1,3 +1,12 @@
 .searchGifs{
-    margin-top: 20px;
+    display:flex ;
+    justify-content: center;
+}
+.searchGifs input, select, button{ 
+    padding: 5px;
+}
+.searchGifs button{
+    outline: none;
+    background-color: aqua;
+    border: none;
 }

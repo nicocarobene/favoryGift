@@ -7,7 +7,7 @@ import useSingleGif from '../../Hook/useSingleGif'
 import { Helmet } from 'react-helmet'
 
 export default function Detail ({ params }) {
-  const { id } = params
+  const { id, gifD } = params
   const { gif, isLoading, isError } = useSingleGif({ id })
 
   if (isLoading) {
@@ -35,7 +35,7 @@ export default function Detail ({ params }) {
       <Helmet>
         <title>{gif.title} | Giffy</title>
       </Helmet>
-      <Gif title={gif.title} url={gif.url} id={id} />
+      <Gif gifD={gifD} title={gif.title} url={gif.url} id={id} />
     </>
   )
 }

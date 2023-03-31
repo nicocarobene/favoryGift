@@ -28,14 +28,14 @@ export default function App () {
               <Route path='/' component={Home} />
               <Route component={SearchResult} path='/search/:meme/:rating?' />
 
-              <Route component={Detail} path='/gif/:id' />
+              <Route component={Detail} path='/:gifD/:id' />
               <Route component={Login} path='/login' />
               <Route component={RegisterPage} path='/register' />
               <Route component={Error404} path='/:rest*' />
             </Switch>
           </div>
           <div className='Tranding'>
-            <h3>Memes Trending</h3>
+            <h3 className='Tranding__title'>Memes Trending</h3>
             <TrendingSearches />
           </div>
         </div>
