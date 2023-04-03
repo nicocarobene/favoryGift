@@ -1,13 +1,21 @@
+require('dotenv').config()
+require('./mongo')
+
 const express = require('express')
 const cors = require('cors')
+
+const User= require('./Models/User')
+const Fav= require('./Models/Fav')
+
 const jwt = require('jsonwebtoken')
+
 
 const SING = 'SECRET WORD'
 
 const users = []
-
 let user
 let favs = []
+
 
 const app = express()
 app.use(express.json())
@@ -57,9 +65,15 @@ app.post('/favs/:id', (request, response) => {
     response.status(400)
     response.json({ error: 'user is not finded' })
   }
+  // favs = favs.concat(id)
+  // favs.push(id) ver si funciona
+  console.log(typeof(id), typeof(user.username))
 
-  favs.push(id)
-  console.log(favs)
+  const newFav= new Fav({
+    fav: id,
+    user: user.username
+  })
+
   response.status(200)
   response.send({ favs })
   response.end()
@@ -68,12 +82,16 @@ app.post('/favs/:id', (request, response) => {
 app.get('/favs', (request, response) => {
   const jwt = request.headers.authorization
   console.log(jwt, user.token)
+
   if (jwt !== user.token) {
     response.status(400)
     response.json({ error: 'user is not finded' })
   }
   response.status(200)
-  response.json({ favs })
+  Fav.find({}).then(notes=>{
+    response.json({ notes })
+    console.log(notes)
+  })
 })
 
 app.delete('/favs/:id', (request, response) => {
@@ -90,7 +108,7 @@ app.delete('/favs/:id', (request, response) => {
   response.end()
 })
 
-const PORT = 3030
+const PORT = process.env.PORT || 3001
 
 app.listen(PORT, () => {
   console.log(`Servers ranning in PORT: ${PORT}`)
