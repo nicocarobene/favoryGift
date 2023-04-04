@@ -5,6 +5,7 @@ const express = require('express')
 const cors = require('cors')
 
 const usersRouter = require('./controllers/usersRouter')
+const loginRouter = require('./controllers/LoginRouter')
 
 const User = require('./Models/User')
 const Fav = require('./Models/Fav')
@@ -35,7 +36,9 @@ app.post('/api/users', (request, response) => {
   }
 })
 
-app.use('/api/login', usersRouter)
+
+app.use('/api/newregister', usersRouter)
+app.use('/api/login', loginRouter)
 
 app.post('/api/register', (request, response) => {
   const { username, password } = request.body
