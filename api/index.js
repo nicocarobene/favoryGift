@@ -4,18 +4,18 @@ require('./mongo')
 const express = require('express')
 const cors = require('cors')
 
-const User= require('./Models/User')
-const Fav= require('./Models/Fav')
+const usersRouter = require('./controllers/usersRouter')
+
+const User = require('./Models/User')
+const Fav = require('./Models/Fav')
 
 const jwt = require('jsonwebtoken')
-
 
 const SING = 'SECRET WORD'
 
 const users = []
 let user
 let favs = []
-
 
 const app = express()
 app.use(express.json())
@@ -35,8 +35,21 @@ app.post('/api/users', (request, response) => {
   }
 })
 
+app.use('/api/login', usersRouter)
+
 app.post('/api/register', (request, response) => {
   const { username, password } = request.body
+
+  // Note.find({ username })
+  //   .then(user => {
+  //     if (userAlready) {
+  //       response.status(400)
+  //       response.json({ error: 'user is already Existe' })
+  //     }
+  //   })
+
+  // const token = jwt.sign({ username, password }, SING)
+
   const userExist = users.some(user => user.username === username)
   console.log(userExist)
   if (userExist) {
@@ -67,9 +80,9 @@ app.post('/favs/:id', (request, response) => {
   }
   // favs = favs.concat(id)
   // favs.push(id) ver si funciona
-  console.log(typeof(id), typeof(user.username))
+  console.log(typeof (id), typeof (user.username))
 
-  const newFav= new Fav({
+  const newFav = new Fav({
     fav: id,
     user: user.username
   })
@@ -88,7 +101,7 @@ app.get('/favs', (request, response) => {
     response.json({ error: 'user is not finded' })
   }
   response.status(200)
-  Fav.find({}).then(notes=>{
+  Fav.find({}).then(notes => {
     response.json({ notes })
     console.log(notes)
   })
