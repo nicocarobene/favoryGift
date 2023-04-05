@@ -1,0 +1,6 @@
+DELETE http://localhost:3030/removeFav
+Content-Type: application/json
+
+{
+    "id": "GCKhK35dceVYnb8scC"
+}

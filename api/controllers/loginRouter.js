@@ -21,7 +21,7 @@ loginRouter.post('/', async (req, resp) => {
   }
   resp.json({
     username: user.username,
-    fav: user.favs,
+    favs: user.favs,
     message: 'tuto ben'
   })
 })
