@@ -15,7 +15,6 @@ usersRouter.post('/', (req, resp) => {
   user.save().then(savedUser => {
     resp.json(savedUser)
   })
-  user.
 })
 
 module.exports = usersRouter
