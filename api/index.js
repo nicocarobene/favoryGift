@@ -5,9 +5,10 @@ const express = require('express')
 const cors = require('cors')
 
 const usersRouter = require('./controllers/usersRouter')
-const loginRouter = require('./controllers/LoginRouter')
+const loginRouter = require('./controllers/loginRouter')
+const favRouter = require('./controllers/favRouter')
 
-const User = require('./Models/User')
+// const User = require('./Models/User')
 const Fav = require('./Models/Fav')
 
 const jwt = require('jsonwebtoken')
@@ -35,7 +36,6 @@ app.post('/api/users', (request, response) => {
     response.end()
   }
 })
-
 
 app.use('/api/newregister', usersRouter)
 app.use('/api/login', loginRouter)
@@ -82,18 +82,14 @@ app.post('/favs/:id', (request, response) => {
     response.json({ error: 'user is not finded' })
   }
   // favs = favs.concat(id)
-  // favs.push(id) ver si funciona
-  console.log(typeof (id), typeof (user.username))
-
-  const newFav = new Fav({
-    fav: id,
-    user: user.username
-  })
+  favs.push(id)
 
   response.status(200)
   response.send({ favs })
   response.end()
 })
+
+app.use('/addFav', favRouter)
 
 app.get('/favs', (request, response) => {
   const jwt = request.headers.authorization
