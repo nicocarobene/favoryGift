@@ -1,18 +1,17 @@
 const ENDPOINT = 'http://localhost:3030'
 
 export default function getAllFav ({ jwt }) {
-  return fetch(`${ENDPOINT}/favs`, {
+  return fetch(`${ENDPOINT}/fav`, {
     method: 'GET',
     headers: {
-      Authorization: jwt,
-      'Content-type': 'application/json'
+      Authorization: `Bearer ${jwt}`
     }
   }).then(res => {
     if (!res.ok) throw new Error('Response in NOT ok')
     return res.json()
   })
     .then(json => {
-      const { favs } = json
-      return favs
+      const { res } = json
+      return res
     })
 }

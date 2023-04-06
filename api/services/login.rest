@@ -2,7 +2,7 @@ POST  http://localhost:3030/api/newregister
 Content-Type: application/json
 
 {
-    "username": "Nicolascarobene",
-    "name": "Nico",
+    "username": "MartinCarobene",
+    "name": "Martin",
     "password":"lamidupassword"
 }

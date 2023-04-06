@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGO_DB_URI, {
   console.error(err)
 })
 
-// process.on('uncaughtException', error => {
-//   console.error(error)
-//   mongoose.disconnect()
-// })
+process.on('uncaughtException', error => {
+  console.error(error)
+  mongoose.disconnect()
+})

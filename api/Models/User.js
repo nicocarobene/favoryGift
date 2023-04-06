@@ -16,8 +16,7 @@ const userSchema = new Schema({
   },
   favs: [{
     type: Schema.Types.ObjectId,
-    ref: 'Fav',
-    unique: true
+    ref: 'Fav'
   }]
 })
 

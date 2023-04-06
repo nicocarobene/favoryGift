@@ -1,12 +1,10 @@
 const ENDPOINT = 'http://localhost:3030'
 
 export default function addFav ({ id, jwt }) {
+  console.log(id)
   return fetch(`${ENDPOINT}/favs/${id}`, {
     method: 'POST',
-    headers: {
-      'Content-type': 'application/json'
-    },
-    body: JSON.stringify({ jwt })
+    headers: { Authorization: `Bearer ${jwt}` }
   }).then(res => {
     if (!res.ok) throw new Error('Response in NOT ok')
     return res.json()

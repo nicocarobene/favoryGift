@@ -4,38 +4,38 @@ require('./mongo')
 const express = require('express')
 const cors = require('cors')
 
+const userExtractor = require('./MiddleWare/userExtractor')
+
 const usersRouter = require('./controllers/usersRouter')
 const loginRouter = require('./controllers/loginRouter')
 const favRouter = require('./controllers/favRouter')
 const RemoveFavRouter = require('./controllers/RemoveFavRouter')
 
-const jwt = require('jsonwebtoken')
-const Fav = require('./Models/Fav')
-const SING = 'SECRET WORD'
+const User = require('./Models/User')
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.use('/api/newregister', usersRouter)
-app.use('/api/login', loginRouter)
-app.use('/addFav', favRouter)
-app.use('/removeFav',RemoveFavRouter)
+app.use('/api/register', usersRouter)
+app.use('/api/users', loginRouter)
+app.use('/favs', userExtractor, favRouter)
+app.use('/favs', userExtractor, RemoveFavRouter)
 
-
-app.get('/',(req,resp)=>{
-  Fav.find({}).then(res=> resp.json({"res" : res}))
+app.get('/fav', userExtractor, async (req, resp) => {
+  const { username } = req
+  const user = await User.findOne({ username }).populate('favs')
+  const favs = user.favs.map(like => like.likeId)
+  if (!user) {
+    return resp.status(400).json({ error: 'username or password was wrong' })
+  }
+  resp.status(200).json({ res: favs })
 })
-
-
-// const users = []
-// let user
-// let favs = []
 
 // app.post('/api/users', (request, response) => {
 //   const { username, password } = request.body
 //   user = users.find(user => user.username === username)
-  
+
 //   if (!user || password !== user.password) {
 //     response.json({ error: 'los datos introducidos son incorrector por favor verifiquelos' })
 //     response.status(404)
@@ -82,7 +82,6 @@ app.get('/',(req,resp)=>{
 //   response.send({ favs })
 //   response.end()
 // })
-
 
 // app.get('/favs', (request, response) => {
 //   const jwt = request.headers.authorization
