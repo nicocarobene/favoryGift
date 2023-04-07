@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useLocation } from 'wouter'
 import useUser from '../../Hook/useUser'
 import Modal from '../Modal/Index'
@@ -11,11 +11,7 @@ function ButtonFav ({ id }) {
   const [showModal, setShowModal] = useState(false)
   const { isLogged, addFav, favs, deleteFav } = useUser()
 
-  let isFaved = favs.some(fav => fav === id)
-
-  useEffect(() => {
-    isFaved = favs.some(fav => fav === id)
-  }, [addFav, favs])
+  const isFaved = favs.some(fav => fav === id)
 
   const handleClick = async () => {
     if (!isLogged) return setShowModal(true)

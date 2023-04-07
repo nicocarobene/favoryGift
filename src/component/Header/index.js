@@ -15,7 +15,11 @@ export default function Header () {
   const content = match
     ? <Link to='/register'>Register</Link>
     : isLogged
-      ? <Link to='' onClick={handleClick}>Logout</Link>
+      ? (
+        <>
+          <Link to='/myLikes'>Likes</Link>
+          <Link to='' onClick={handleClick}>Logout</Link>
+        </>)
       : (
         <>
           <Link to='/register'>Register</Link>

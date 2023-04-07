@@ -10,7 +10,7 @@ const favSchema = new Schema({
   users: [{
     type: Schema.Types.ObjectId,
     ref: 'User',
-    unique: true
+    require: true
   }]
 })
 

@@ -12,6 +12,7 @@ import Login from './pages/Login/index'
 import { UserContextProvider } from './Context/UserContext'
 import RegisterPage from './pages/Register/Index'
 import SearchForm from './component/searchForm'
+import MyLikes from './pages/MyLikes/MyLikes'
 
 export default function App () {
   return (
@@ -31,6 +32,7 @@ export default function App () {
               <Route component={Detail} path='/:gifD/:id' />
               <Route component={Login} path='/login' />
               <Route component={RegisterPage} path='/register' />
+              <Route component={MyLikes} path='/myLikes' />
               <Route component={Error404} path='/:rest*' />
             </Switch>
           </div>

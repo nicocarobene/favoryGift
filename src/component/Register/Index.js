@@ -18,12 +18,18 @@ export default function Formulario () {
       <Formik
         initialValues={{
           username: '',
+          name: '',
           password: ''
         }}
         validate={(values) => {
           const errors = {}
           if (!values.username) {
             errors.username = 'Required username'
+          }
+          if (!values.name) {
+            errors.name = 'Required name'
+          } else if (values.name.length <= 2) {
+            errors.name = 'Required name greater than 2 word'
           }
           if (!values.password) {
             errors.password = 'Required password'
@@ -47,6 +53,11 @@ export default function Formulario () {
                 <Field
                   className={errors.username ? 'error' : ''}
                   name='username' placeholder='Put here the username'
+                />
+                <Field
+                  className={errors.name ? 'error' : ''}
+                  name='name'
+                  placeholder='Put here your name or nickname'
                 />
                 <i class='fa-solid fa-lock' />
                 <ErrorMessage name='password' component='h4' />

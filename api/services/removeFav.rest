@@ -1,5 +1,4 @@
-DELETE   http://localhost:3030/favs/bGCwmLDnwL25kCg3FV
-Content-Type: application/json
+DELETE   http://localhost:3030/favs/3ohjUYERoa0moVMBVe
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmVmZDk1NzliMWVjYWU4OGQwYzBlYiIsInVzZXJuYW1lIjoiTWFydGluQ2Fyb2JlbmUiLCJpYXQiOjE2ODA4MDExODUsImV4cCI6MTY4MTQwNTk4NX0.b7-2v2MMXi-nQrifKf6TJjxtiA7SUw0ZBUCRCmbZhWQ
 
-{}
+

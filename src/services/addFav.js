@@ -1,7 +1,6 @@
 const ENDPOINT = 'http://localhost:3030'
 
 export default function addFav ({ id, jwt }) {
-  console.log(id)
   return fetch(`${ENDPOINT}/favs/${id}`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${jwt}` }

@@ -20,7 +20,9 @@ favRouter.post('/:id', async (req, resp) => {
       const saveFav = await newFav.save()
       user.favs = user.favs.concat(saveFav._id)
       await user.save()
-      return resp.status(200).json({ favs: likeId })
+      const newFavUser = await user.populate('favs')
+      const likes = newFavUser.favs.map(fav => fav.likeId)
+      return resp.status(200).json({ favs: likes })
     } catch (e) {
       console.log(e)
     }
@@ -34,7 +36,9 @@ favRouter.post('/:id', async (req, resp) => {
   user.favs = user.favs.concat(isAlreadyFav._id)
   await isAlreadyFav.save()
   await user.save()
-  resp.status(200).json({ favs: likeId })
+  const newFavUser = await user.populate('favs')
+  const likes = newFavUser.favs.map(fav => fav.likeId)
+  resp.status(200).json({ favs: likes })
 })
 
 module.exports = favRouter
