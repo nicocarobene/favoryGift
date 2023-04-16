@@ -1,4 +1,4 @@
-const ENDPOINT = '/api/register'
+const ENDPOINT = 'http://localhost:3030/api/register'
 
 export default function login ({ username, name, password }) {
   return (fetch(`${ENDPOINT}`, {

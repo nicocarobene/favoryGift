@@ -1,7 +1,7 @@
-// const ENDPOINT = 'http://localhost:3030'
+const ENDPOINT = 'http://localhost:3030'
 
 export default function addFav ({ id, jwt }) {
-  return fetch(`/favs/${id}`, {
+  return fetch(`${ENDPOINT}/favs/${id}`, {
     method: 'DELETE',
     headers: { Authorization: `Bearer ${jwt}` }
   }).then(res => {

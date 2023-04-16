@@ -1,4 +1,4 @@
-const ENDPOINT = '/api/users'
+const ENDPOINT = 'http://localhost:3030/api/users'
 
 export default function login ({ username, password }) {
   return (fetch(`${ENDPOINT}`, {
