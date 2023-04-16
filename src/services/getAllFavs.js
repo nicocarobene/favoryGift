@@ -1,7 +1,7 @@
-const ENDPOINT = 'http://localhost:3030'
+// const ENDPOINT = 'http://localhost:3030'
 
 export default function getAllFav ({ jwt }) {
-  return fetch(`${ENDPOINT}/fav`, {
+  return fetch('/fav', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${jwt}`
